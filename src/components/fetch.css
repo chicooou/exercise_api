@@ -1,0 +1,46 @@
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+.cardContainer{
+    display: flex;
+    row-gap: 10px;
+    width: 300px;    
+    
+    flex-direction: column;
+    
+}
+
+.items {
+    background: gray;
+    border-radius: 10px;
+    padding: 25px;
+    font-family:Arial, Helvetica, sans-serif
+    
+}
+.alpha {
+    color: white;
+    font-size: small;
+    
+}
+
+.name {
+    display: flex;
+    color: white;
+    margin-bottom: 50px;
+    font-size: larger;
+    align-self: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.domain{
+    margin-top: 5px;
+    color: white;
+    
+}
