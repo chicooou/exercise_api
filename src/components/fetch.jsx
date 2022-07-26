@@ -3,20 +3,30 @@ import { useEffect, useState } from 'react';
 import '../components/fetch.css'
 
 
-
+const myUrl = new URL(window.location.href)
+const country = myUrl.searchParams.get("country");
 
 function Fetch() {
+
+    
     const url = 'http://universities.hipolabs.com/search?country=Guatemala';
-    const [universities, setUniversities] = useState(); //func que almacena los datos
+
+    const urlAPI = new URL(url)
+
+    urlAPI.search = `?country=${(country)}`
+
+
+
+    const [universities, setUniversities] = useState(); //func que almacena fetch a var
     useEffect(() => {
         fetchApi();
-    }, []);
+    }, []); //genera el fetch al cargar la pág.
 
-    const fetchApi = async () => {
-        const response = await fetch(url);
-        const responseJSON = await response.json();
+    const fetchApi = async () => { //func asíncrona para ejecutar el fetch
+        const response = await fetch(urlAPI.href);
+        const responseJSON = await response.json(); 
         setUniversities(responseJSON);
-        console.log(responseJSON.name)
+        
     }
         return (
             <>
